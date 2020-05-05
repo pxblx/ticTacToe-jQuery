@@ -1,0 +1,106 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+header {
+    min-height: 75px;
+    text-align: center;
+    background-color: black;
+}
+
+h1 {
+    margin: 0px;
+    color: white;
+    padding: 25px 0px;
+    user-select: none;
+}
+
+main {
+    text-align: center;
+}
+
+#info {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+#infoP {
+    margin: 0;
+    margin-right: 8px;
+    user-select: none;
+}
+
+#infoImg {
+    width: 15px;
+    height: 15px;
+}
+
+#tablero {
+    margin-top: 65px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 25px;
+    background-color: #d9efff;
+}
+
+#tablero div {
+    display: flex;
+}
+
+.celda {
+    background-color: #65c1ff;
+    margin: 3px;
+    width: 75px;
+    height: 75px;
+    background-position: center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+}
+
+.celda:hover {
+    background-color: #18a3ff;
+}
+
+.X {
+    background-image: url("../img/X.png");
+}
+
+.O {
+    background-image: url("../img/O.png");
+}
+
+.raya {
+    background-color: #f8e57a !important;
+}
+
+.desactivada {
+    pointer-events: none;
+}
+
+#reiniciar {
+    margin: 25px 3px 0px 3px;
+    justify-content: center;
+    align-items: center;
+    background-color: #65c1ff;
+    padding: 8px 12px;
+}
+
+#reiniciar:hover {
+    background-color: #18a3ff;
+}
+
+#reiniciar p {
+    margin: 0;
+    margin-right: 8px;
+    user-select: none;
+}
+
+#reiniciar img {
+    width: 15px;
+    height: 15px;
+}
