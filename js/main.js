@@ -23,7 +23,6 @@ $(function () {
                 $infoImg.css("display", "none");
             } else {
                 $infoP.html("Ha ganado");
-                $infoImg.attr("src", "img/" + resultado.ganador + ".png");
                 $celdas.each(function (index) {
                     if ($.inArray(index, resultado.raya) !== -1) $(this).fadeOut().addClass("raya").fadeIn().fadeOut().fadeIn();
                     $(this).addClass("desactivada");
