@@ -15,12 +15,10 @@ $(function () {
 
     // Listener para las celdas
     $celdas.click(function () {
-        try {
-            $(this).addClass(ticTacToe.getTurno() + " desactivada");
-            ticTacToe.clickCelda($celdas.index($(this)));
-            $infoImg.attr("src", "img/" + ticTacToe.getTurno() + ".png");
-        } catch (resultado) {
-            if (resultado === "empate") {
+        $(this).addClass(ticTacToe.getTurno() + " desactivada");
+        let resultado = ticTacToe.clickCelda($celdas.index($(this)));
+        if (resultado.finPartida) {
+            if (resultado.ganador === "empate") {
                 $infoP.html("Empate");
                 $infoImg.css("display", "none");
             } else {
@@ -31,6 +29,8 @@ $(function () {
                     $(this).addClass("desactivada");
                 });
             }
+        } else {
+            $infoImg.attr("src", "img/" + ticTacToe.getTurno() + ".png");
         }
     });
 
