@@ -23,10 +23,13 @@ $(function () {
                 $infoImg.css("display", "none");
             } else {
                 $infoP.html("Ha ganado");
-                $celdas.each(function (index) {
-                    if ($.inArray(index, resultado.raya) !== -1) $(this).fadeOut().addClass("raya").fadeIn().fadeOut().fadeIn();
-                    $(this).addClass("desactivada");
-                });
+                $celdas.addClass("desactivada");
+                $celdas.filter(function (index) {return resultado.raya.includes(index)})
+                    .fadeOut()
+                    .addClass("raya")
+                    .fadeIn()
+                    .fadeOut()
+                    .fadeIn();
             }
         } else {
             $infoImg.attr("src", "img/" + ticTacToe.getTurno() + ".png");
