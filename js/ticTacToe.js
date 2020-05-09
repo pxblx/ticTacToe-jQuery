@@ -56,12 +56,10 @@ let ticTacToe = (function () {
             comprobar(tablero[0] * tablero[4] * tablero[8], [0, 4, 8]); // Diagonal 1
             comprobar(tablero[2] * tablero[4] * tablero[6], [2, 4, 6]); // Diagonal 2
             if (tablero.every((celda) => celda !== 0)) throw {finPartida: true, ganador: "empate"}; // Empate
+            return {finPartida: false}; // La partida continúa
         } catch (resultado) {
             return resultado;
         }
-
-        // La partida continúa
-        return {finPartida: false};
     }
 
     return {
