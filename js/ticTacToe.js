@@ -42,11 +42,11 @@ let ticTacToe = (function () {
      * de la raya con la que gana
      */
     let clickCelda = function (celda) {
-        tablero[celda] = turno === JUGADOR_X ? 2 : 3; // Colocar ficha (2 para las X y 3 para las O)
-        turno = turno === JUGADOR_X ? JUGADOR_O : JUGADOR_X; // Cambio de turno
-
-        // Comprobar si es jugada ganadora o empate y la partida termina
         try {
+            tablero[celda] = turno === JUGADOR_X ? 2 : 3; // Colocar ficha (2 para las X y 3 para las O)
+            turno = turno === JUGADOR_X ? JUGADOR_O : JUGADOR_X; // Cambio de turno
+
+            // Comprobar si es jugada ganadora o empate y la partida termina
             comprobar(tablero[0] * tablero[1] * tablero[2], [0, 1, 2]); // Horizontal 1
             comprobar(tablero[3] * tablero[4] * tablero[5], [3, 4, 5]); // Horizontal 1
             comprobar(tablero[6] * tablero[7] * tablero[8], [6, 7, 8]); // Horizontal 3
@@ -56,9 +56,10 @@ let ticTacToe = (function () {
             comprobar(tablero[0] * tablero[4] * tablero[8], [0, 4, 8]); // Diagonal 1
             comprobar(tablero[2] * tablero[4] * tablero[6], [2, 4, 6]); // Diagonal 2
             if (tablero.every((celda) => celda !== 0)) throw {finPartida: true, ganador: "empate"}; // Empate
+
             return {finPartida: false}; // La partida continúa
         } catch (resultado) {
-            return resultado;
+            return resultado; // La partida termina
         }
     }
 
